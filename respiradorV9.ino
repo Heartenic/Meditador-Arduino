@@ -13,6 +13,7 @@
 // CAMBIOS SOBRE 0.8:
 // Meditacion muestra 1-2 en vez de mostrar numero de ciclos
 // Meditacion con limite de 100 -> 1000 ciclos para hasta 2h de meditacion
+// ejercicios cancelables
 // ------------------------------------------------------------------------
 // Dependencias
 #include <Wire.h>

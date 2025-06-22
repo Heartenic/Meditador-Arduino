@@ -8,8 +8,8 @@
 #include <Adafruit_SSD1306.h>
 
 // Pines para el display OLED
-#define OLED_SDA 7 // 6 en C6  -  7 en C3
-#define OLED_SCL 9 // 6 en C6  -  9 en C3
+#define OLED_SDA 7 // 6 en ESP32 C6  -  ESP32 7 en C3
+#define OLED_SCL 9 // 7 en ESP32 C6  -  ESP32 9 en C3
 #define SCREEN_WIDTH 128  // Resolución X del display
 #define SCREEN_HEIGHT 64  // Resolución Y del display
 

@@ -65,6 +65,7 @@ bool breathingExercise() {
     for (int t = rest_time; t >= 0 && !interrupted; t -= 50) {
       if (digitalRead(BUTTON_PIN) == LOW) {
         interrupted = true;
+        analogWrite(MOTOR_PIN, 0);
         break;
       }
       delay(50);
@@ -90,6 +91,7 @@ bool breathingExercise() {
         }
         if (digitalRead(BUTTON_PIN) == LOW) {
           interrupted = true;
+          analogWrite(MOTOR_PIN, 0);
           break;
         }
       }
@@ -106,6 +108,7 @@ bool breathingExercise() {
         delay(100);
         if (digitalRead(BUTTON_PIN) == LOW) {
           interrupted = true;
+          analogWrite(MOTOR_PIN, 0);
           break;
         }
       }
@@ -124,6 +127,7 @@ bool breathingExercise() {
         delay(exhaleStep);
         if (digitalRead(BUTTON_PIN) == LOW) {
           interrupted = true;
+          analogWrite(MOTOR_PIN, 0);
           break;
         }
       }
@@ -190,8 +194,10 @@ void meditationMode() {
         delay(inhaleStep - elapsed);
       }
     }
-    if (interrupted) break;
-    analogWrite(MOTOR_PIN, 0);
+    if (interrupted){
+      analogWrite(MOTOR_PIN, 0);
+      break;
+    }
     
     // Fase de retención (hold) sin vibración
     for (int t = hold_time; t >= 0; t -= 100) {
@@ -213,7 +219,10 @@ void meditationMode() {
       }
       if (interrupted) break;
     }
-    if (interrupted) break;
+    if (interrupted){
+      analogWrite(MOTOR_PIN, 0);
+      break;
+    }
     
     // Fase de exhalación con feedback táctil constante
     unsigned long exhaleStep = exhale_time / (CIRCLE_RADIUS + 1);
@@ -230,8 +239,11 @@ void meditationMode() {
       analogWrite(MOTOR_PIN, 135);
       delay(exhaleStep);
     }
-    if (interrupted) break;
     analogWrite(MOTOR_PIN, 0);
+    if (interrupted){
+      analogWrite(MOTOR_PIN, 0);
+      break;
+    }
     
     cycles++;  // Incrementa si se completó el ciclo
 
@@ -248,7 +260,10 @@ void meditationMode() {
       }
       delay(50);
     }
-    if (interrupted) break;
+    if (interrupted){
+      analogWrite(MOTOR_PIN, 0);
+      break;
+    }
   }
   
   // Actualizamos la NVS con los ciclos completados
