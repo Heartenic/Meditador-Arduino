@@ -107,18 +107,18 @@ Pequeño dispositivo portátil diseñado para guiar ejercicios de respiración y
 
 ## 📥 Proceso de Flasheo y Configuración Inicial
 
-El flasheo de los **ESP32-C3 Supermini** puede ser confuso si nunca has trabajado con esta versión. En muchas placas, el modo de flasheo (upload mode) **no entra automáticamente**, por lo que debes forzarlo manualmente.
-El flasheo de los **ESP32-C6 Supermini** suele ser mas sencillo.
+El flasheo de los **ESP32-C3 Supermini** o **ESP32-C6 Supermini** puede ser confuso si nunca has trabajado con estas versiones. En muchas placas, el modo de flasheo (upload mode) **no entra automáticamente**, por lo que debes forzarlo manualmente.
+Si no hace esto, la placa se **rebooteara constantemente**.
 
-### 🔌 Pasos para Flashear ESP32-C3 Supermini
+### 🔌 Pasos para Flashear ESP32-C3 Supermini o ESP32-C6 Supermini
 
-1. Conecta el **ESP32-C3 Supermini** a tu PC por USB-C.
+1. Conecta el **ESP32** a tu PC por USB-C.
 2. Despues de conectar, mantén presionado el botón **BOOT**.
 3. Sin soltar **BOOT**, presiona brevemente el botón **RESET**.
 4. Ahora sí, suelta el botón **BOOT**.
-5. El ESP32-C3 entrará en modo de flasheo (el puerto COM debería aparecer correctamente).
+5. El ESP32 entrará en modo de flasheo (el puerto COM debería aparecer correctamente).
 6. En el IDE (Arduino o PlatformIO), selecciona la placa:
-    - **Board:** `ESP32C3 Dev Module`
+    - **Board:** `ESP32C3 Dev Module` o `ESP32C6 Dev Module`
     - **Upload Speed:** `115200`
     - **Partition Scheme:** `Default 4MB with spiffs`
     - **Encender USB CDC On Boot:** en caso de utilizar el monitor serial
@@ -138,7 +138,7 @@ El flasheo de los **ESP32-C6 Supermini** suele ser mas sencillo.
 
 ## 🔗 Nota Importante
 
-Muchos **ESP32-C3 Supermini** baratos (Aliexpress) no tienen auto-bootloader bien configurado, por lo que este proceso manual es "normal". No significa que tu placa esté defectuosa.
+Muchos **ESP32-C3 Supermini** / **ESP32-C6 Supermini** baratos (Aliexpress) no tienen auto-bootloader bien configurado, por lo que este proceso manual es "normal". No significa que tu placa esté defectuosa.
 
 En Windows, el **Administrador de Dispositivos** puede ayudarte a ver si el puerto está presente o no.
 
