@@ -76,7 +76,7 @@ Pequeño dispositivo portátil diseñado para guiar ejercicios de respiración y
 | Exhalar | 4000 |
 | Descanso | 1500 |
 
-### Meditación (hasta 99 ciclos)
+### Meditación (hasta 1000 ciclos)
 | Fase | Duración (ms) |
 |---|---|
 | Inhalar | 2700 |
