@@ -11,7 +11,7 @@ constexpr uint8_t OLED_ADDRESS = 0x3C;
 void setModemSleep() {
     WiFi.mode(WIFI_OFF);    // Apagar WiFi
     btStop();               // Apagar Bluetooth
-    setCpuFrequencyMhz(20); // Reducir la frecuencia del CPU (máx. 160)
+    setCpuFrequencyMhz(40); // Reducir la frecuencia del CPU (máx. 160)
 }
 
 void setupDisplay() {

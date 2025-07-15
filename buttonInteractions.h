@@ -71,6 +71,8 @@ public:
               onSingleClick();
             } else if (_tapCounter == 3) {
               onTripleClick();
+            } else if (_tapCounter == 5) {
+              onQuintupleClick();
             }
           }
           _tapCounter = 0;
@@ -84,6 +86,7 @@ public:
   // Métodos virtuales para sobreescribir según la aplicación
   virtual void onSingleClick() {}
   virtual void onTripleClick() {}
+  virtual void onQuintupleClick() {}
   virtual void onLongPress() {}
 
   // Setter para el tiempo de debounce

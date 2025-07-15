@@ -9,6 +9,7 @@ extern const unsigned char epd_bitmap_imagen_logo[] PROGMEM;
 extern const unsigned char epd_bitmap_exercise_complete[] PROGMEM;
 extern const unsigned char epd_bitmap_meditation_complete[] PROGMEM;
 extern const unsigned char epd_bitmap_meditation_mode[] PROGMEM;
+extern const unsigned char epd_bitmap_imagen_apagado [] PROGMEM;
 
 // Muestra la pantalla de estadísticas del usuario
 void pantallaUserStats();
@@ -24,5 +25,8 @@ void pantallaMedComp();
 
 // Muestra la pantalla de modo meditacion
 void pantallaMedMode();
+
+// Muestra la pantalla de apagado
+void apagado();
 
 #endif // CUSTOMSCREENS_H

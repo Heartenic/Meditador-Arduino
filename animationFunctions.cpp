@@ -151,10 +151,10 @@ bool breathingExercise() {
 void meditationMode() {
   // Configuramos tiempos para la meditación
   // 7 segundos por ciclo
-  inhale_time = 2700;
-  hold_time   = 800;
-  exhale_time = 2700;
-  rest_time   = 800;
+  inhale_time = 2700; // + 43ms x ciclo
+  hold_time   = 800;  // + 73ms x ciclo
+  exhale_time = 2700; // + 43ms x ciclo
+  rest_time   = 800; // + 20 ms x ciclo
   
   int cycles = 1;           // Para evitar mostrar -1
   bool interrupted = false; // Para detectar interrupción
@@ -263,6 +263,14 @@ void meditationMode() {
     if (interrupted){
       analogWrite(MOTOR_PIN, 0);
       break;
+    }
+
+    // incrementando tiempos despues de cada ciclo
+    if (inhale_time < 4000){
+      inhale_time += 43; // + 43ms x ciclo : max 4033ms ~ 4s
+      hold_time += 73;  // + 73ms x ciclo : max 3063ms ~ 3s
+      exhale_time += 43; // + 43ms x ciclo : max 4033ms ~ 4s
+      rest_time += 40; // + 40 ms x ciclo : max 2000ms ~ 2s
     }
   }
   

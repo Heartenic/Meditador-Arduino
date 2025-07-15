@@ -28,6 +28,7 @@ Pequeño dispositivo portátil diseñado para guiar ejercicios de respiración y
 | BMS | TP4056 (ESP32-C3 Supermini) o BMS integrado ESP32-C6 Supermini|
 | Batería | LiPo (150-500 mAh) |
 | Botón | Único botón físico para todas las interacciones |
+| Sliding Switch | Para apagado físico Opcional al utilizar BMS integrado de ESP32 C6|
 | Carcasa | Impresa en 3D, diseño ergonómico y compacto |
 
 ### Pines de Conexión si se utiliza ESP32-C3 Supermini
@@ -49,6 +50,8 @@ Pequeño dispositivo portátil diseñado para guiar ejercicios de respiración y
 ### Consumo Aproximado
 | Estado | Consumo |
 |---|---|
+|Apagado físico | ~0 A teórico |
+|Apagado lógico (Deep sleep) | ~10–50 µA esperado |
 | Light Sleep | ~10 mA |
 | Activo (OLED + Motor) | ~85 mA |
 
@@ -56,13 +59,15 @@ Pequeño dispositivo portátil diseñado para guiar ejercicios de respiración y
 
 ## 🎮 Modos de Uso e Interacciones
 
-| Acción | Función |
+| Acción  | Función  |
 |---|---|
-| 1 clic | Ejercicio breve de respiración (3 ciclos) |
-| 1 clic (en ejercicio) | cancela el ejercicio (no se cuentan las respiraciones) |
-| 3 clics | Modo meditación (indefinido, hasta 1000 ciclos o interrupción) |
-| 1 clic (en meditación) | Termina la meditación |
-| Mantener presionado | Muestra estadísticas de uso |
+| 1 clic                      | Ejercicio breve de respiración (3 ciclos) |
+| 1 clic (durante ejercicio)  | Cancela el ejercicio  |
+| 3 clics                     | Modo meditación (indefinido, hasta 1000 ciclos o interrupción) |
+| 1 clic (durante meditación) | Termina la meditación |
+| Mantener presionado         | Muestra estadísticas de uso |
+| 5 clics       | Apagado lógico (deep sleep) |
+| 1 clic (durante apagado lógico) | Prende el dispositivo |
 
 ---
 
@@ -77,12 +82,12 @@ Pequeño dispositivo portátil diseñado para guiar ejercicios de respiración y
 | Descanso | 1500 |
 
 ### Meditación (hasta 1000 ciclos)
-| Fase | Duración (ms) |
-|---|---|
-| Inhalar | 2700 |
-| Sostener | 800 |
-| Exhalar | 2700 |
-| Descanso | 800 |
+| Fase | Inicial (ms) | Máximo tras \~30 ciclos (ms) |
+|---|---|---|
+| Inhalar  | 2700 | ~4000 |
+| Sostener | 800 | ~3000 |
+| Exhalar  | 2700 | ~4000 |
+| Descanso | 800 | ~2000 |
 
 ---
 
@@ -98,7 +103,8 @@ Pequeño dispositivo portátil diseñado para guiar ejercicios de respiración y
 
 ## 🔋 Consideraciones de Energía
 
-- Switch físico corta la alimentación completa al ESP32 para ahorro máximo.
+- Switch físico corta la alimentación completa al ESP32 para ahorro máximo (al utilizar BMS externo, opcional al utilizar BMS integrado).
+- Ahora utiliza apagado lógico (deep sleep) que puede ser utilizado en lugar del switch físico, para permitir carga aún estando “apagado” (cuando se utiliza el BMS integrado del ESP32 C6 Supermini).
 - El BMS protege de sobrecarga y sobredescarga.
 - En light sleep (modo standby), el consumo es ~10mA.
 - En uso activo (OLED + motor), el consumo es ~85mA.
@@ -138,7 +144,7 @@ Si no hace esto, la placa se **rebooteara constantemente**.
 
 ## 🔗 Nota Importante
 
-Muchos **ESP32-C3 Supermini** / **ESP32-C6 Supermini** baratos (Aliexpress) no tienen auto-bootloader bien configurado, por lo que este proceso manual es "normal". No significa que tu placa esté defectuosa.
+Muchos **ESP32-C3 Supermini** / **ESP32-C6 Supermini** baratos (la mayoria de Aliexpress) no tienen auto-bootloader bien configurado, por lo que este proceso manual es "normal". No significa que tu placa esté defectuosa.
 
 En Windows, el **Administrador de Dispositivos** puede ayudarte a ver si el puerto está presente o no.
 

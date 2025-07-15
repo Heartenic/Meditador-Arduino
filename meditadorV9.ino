@@ -64,11 +64,16 @@ public:
     }
   }
 
-  // Triple clic: inicia el modo meditación
+  // Triple pulsación: inicia el modo meditación
   void onTripleClick() override {
     pantallaMedMode();
     meditationMode();
     delay(250);
+  }
+
+  // Quintuple pulsación: "Apagado logico" con Deep-Sleep
+  void onQuintupleClick() override {
+    apagado();
   }
 
   // Pulsación larga: muestra las estadísticas (total de respiraciones)
