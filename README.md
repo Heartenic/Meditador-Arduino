@@ -71,6 +71,13 @@ Pequeño dispositivo portátil diseñado para guiar ejercicios de respiración y
 
 ---
 
+## 🔋 Apagado por Inactividad
+
+Si el dispositivo esta prendido y se mantienen inactivo por 5 minutos, entra en modo deep sleep (apagado lógico)
+1 clic (durante apagado lógico) -> Prende el dispositivo
+
+---
+
 ## 📊 Tiempos de Respiración
 
 ### Ejercicio Breve (3 ciclos)

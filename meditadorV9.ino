@@ -24,6 +24,8 @@
 #include "customScreens.h"
 // ------------------------------------------------------------------------
 #define BUTTON_PIN 0      // Pin al botón
+#define INACTIVITY 300000 // 5 minutos
+unsigned long lastInteraction = 0;
 // ------------------------------------------------------------------------
 // funcion para calcular nivel del usuario
 int calcularNivel() {
@@ -62,16 +64,17 @@ public:
       display.display();
       delay(250);
     }
+    lastInteraction = millis();
   }
 
-  // Triple pulsación: inicia el modo meditación
+  // Triple clic: inicia el modo meditación
   void onTripleClick() override {
     pantallaMedMode();
     meditationMode();
     delay(250);
+    lastInteraction = millis();
   }
 
-  // Quintuple pulsación: "Apagado logico" con Deep-Sleep
   void onQuintupleClick() override {
     apagado();
   }
@@ -94,6 +97,7 @@ public:
     display.clearDisplay();
     display.display();
     delay(250);
+    lastInteraction = millis();
   }
 };
 // ------------------------------------------------------------------------
@@ -112,6 +116,11 @@ void setup() {
 
 void loop() {
   myButton.update(); // Actualizar continuamente el estado del botón
+
+  // si pasan 5 minutos de inactividad, entra en deep sleep
+  if(millis() - lastInteraction >= INACTIVITY){
+    apagado();
+  }
 }
 
 /*
