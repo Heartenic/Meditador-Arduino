@@ -1,3 +1,10 @@
+// -----------------------------------------------------------------
+// animationFunctions.h
+//
+// Header para funciones de para ejercicios de respiración y meditación
+//
+// -----------------------------------------------------------------
+
 #ifndef ANIMATIONFUNCTIONS_H
 #define ANIMATIONFUNCTIONS_H
 

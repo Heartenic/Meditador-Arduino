@@ -1,3 +1,11 @@
+// -----------------------------------------------------------------
+// customScreens.cpp
+//
+// Definición de pantallas personalizadas;
+// incluye bitmaps y funciones de dibujo
+//
+// -----------------------------------------------------------------
+
 #include "customScreens.h"
 
 // Asegúrate de copiar todos los bytes que necesites; a continuación se muestra el array completo que proporcionaste.
@@ -463,4 +471,34 @@ void pantallaMedMode() {
   delay(3000);
   display.clearDisplay();
   display.display();
+}
+
+
+// Animación personalizada que muestra una secuencia de imágenes
+// no llamada en el flujo principal, pero puede ser utilizada para efectos especiales
+void customAnimation(int cycles) {
+	for(int i = 0; i < cycles; i++){
+		// Frame 1
+		display.clearDisplay();
+		display.drawBitmap(0, 0, epd_bitmap_imagen_apagado, 128, 64, SSD1306_WHITE);
+		display.display();
+		delay(500);
+		// Frame 2
+		display.clearDisplay();
+		display.drawBitmap(0, 0, epd_bitmap_meditation_mode, 128, 64, SSD1306_WHITE);
+		display.display();
+		delay(500);
+		// Frame 3
+		display.clearDisplay();
+		display.drawBitmap(0, 0, epd_bitmap_meditation_complete, 128, 64, SSD1306_WHITE);
+		display.display();
+		delay(500);
+		// Frame 4
+		display.clearDisplay();
+		display.drawBitmap(0, 0, epd_bitmap_exercise_complete, 128, 64, SSD1306_WHITE);
+		display.display();
+		delay(500);
+	}
+	display.clearDisplay();
+	display.display();
 }

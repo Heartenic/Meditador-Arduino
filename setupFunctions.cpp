@@ -1,3 +1,13 @@
+// -----------------------------------------------------------------
+// setupFunctions.cpp
+//
+// Funciones para el setup del dispositivo (cada vez que se enciende)
+//
+// NVS (para el guardado persistente de datos), Modem Sleep (ahorro de energía),
+// y configuración del display OLED
+//
+// -----------------------------------------------------------------
+
 #include "setupFunctions.h"
 
 // Definición de variables globales

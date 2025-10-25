@@ -1,6 +1,14 @@
-// Clase para interacciones con un solo botón
-// Soporta single, triple y long press
+// -----------------------------------------------------------------
+// buttonInteractions.h
+//
+// Clase para distintas interacciones con un solo botón
+// cun click, triple click, quintuple click y long press.
+//
+// Soporta debounce y tiempos configurables
 // Se puede derivar para distintos dispositivos
+//
+// -----------------------------------------------------------------
+
 class ButtonInteraction {
 private:
   int _pin;

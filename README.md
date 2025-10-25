@@ -24,12 +24,12 @@ Pequeño dispositivo portátil diseñado para guiar ejercicios de respiración y
 |---|---|
 | Microcontrolador | ESP32-C3 Supermini o ESP32-C6 Supermini (genérico Aliexpress) |
 | Pantalla | OLED 0.96" 128x64 (SSD1306) |
-| Motor | Motor de vibración de cepillo eléctrico |
+| Motor | Motor de vibración listado para cepillo eléctrico |
 | BMS | TP4056 (ESP32-C3 Supermini) o BMS integrado ESP32-C6 Supermini|
 | Batería | LiPo (150-500 mAh) |
 | Botón | Único botón físico para todas las interacciones |
 | Sliding Switch | Para apagado físico Opcional al utilizar BMS integrado de ESP32 C6|
-| Carcasa | Impresa en 3D, diseño ergonómico y compacto |
+| Carcasa | Impresa en 3D, diseño ergonómico y compacto: https://github.com/Heartenic/Meditador-Modelos3D|
 
 ### Pines de Conexión si se utiliza ESP32-C3 Supermini
 | Componente | Pin |

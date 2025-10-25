@@ -4,7 +4,8 @@
 // ------------------------------------------------------------------------
 // DESCRIPCION:
 // Single Click: ejercicio de tres ciclos
-// Triple Click: meditacion (max 99 ciclos)
+// Triple Click: meditacion (max 1000 ciclos)
+// Quintuple Click: apagado (o apagado por inactividad)
 // Hold: stats
 // Usa NVS para guardar numero de ciclos historico.
 // Utiliza "Modem sleep" para ahorro de bateria.

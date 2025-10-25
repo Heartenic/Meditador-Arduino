@@ -1,3 +1,15 @@
+// -----------------------------------------------------------------
+// animationFunctions.cpp
+//
+// Funciones de para ejercicios de respiración y meditación
+// controla motor de vibración, muestra animaciones en pantalla OLED
+// & actualiza contador persistente en NVS 
+//
+// Logica de meditacion y ejercicios
+//
+// -----------------------------------------------------------------
+
+
 #include "animationFunctions.h"
 #include "setupFunctions.h"
 #include "customScreens.h"
@@ -35,7 +47,7 @@ inline void pulseMotor(uint8_t highVal, uint8_t lowVal, unsigned long duration) 
 
 // Muestra el contador (usado en meditación) en la posición correspondiente
 void displayBreathPhase(int phase) {
-  display.setTextSize(3);           // Tamaño de texto 2
+  display.setTextSize(3);           // Tamaño de texto 3
   display.setCursor(95, 20);        // Posicion
   display.print(phase);             // Imprime 1 para inhalación, 2 para exhalación
 }

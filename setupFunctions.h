@@ -1,3 +1,12 @@
+// -----------------------------------------------------------------
+// setupFunctions.h
+//
+// Header para funciones de setup
+//
+// Incluye definiciones de pines para conexiones del Hardware
+//
+// -----------------------------------------------------------------
+
 #ifndef SETUPFUNCTIONS_H
 #define SETUPFUNCTIONS_H
 
