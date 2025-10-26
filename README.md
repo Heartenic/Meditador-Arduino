@@ -159,9 +159,10 @@ En Windows, el **Administrador de Dispositivos** puede ayudarte a ver si el puer
  🔗 Relación con el Proyecto
 
 Este Codigo de Arduino es parte del _Meditador de Bolsillo de Heartenic_, junto con:
- - Diseño 3D de la carcaza: [https://github.com/Heartenic/Meditador-Arduino](https://github.com/Heartenic/Meditador-Modelos3D)
+ - Diseño 3D de la carcaza: [https://github.com/Heartenic/Meditador-Modelos3D](https://github.com/Heartenic/Meditador-Modelos3D)
  - Documentación del Proyecto: [https://heartenic.com/meditador.html](https://heartenic.com/meditador.html)
 
 ---
+
 
 
