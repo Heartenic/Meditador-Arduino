@@ -152,16 +152,16 @@ Si no hace esto, la placa se **rebooteara constantemente**.
 ## ⚠️ Nota Importante
 
 Muchos **ESP32-C3 Supermini** / **ESP32-C6 Supermini** baratos (la mayoria de Aliexpress) no tienen auto-bootloader bien configurado, por lo que este proceso manual es "normal". No significa que tu placa esté defectuosa.
+En Windows, el **Administrador de Dispositivos** puede ayudarte a ver si el puerto está presente o no.
 
  ---
 
  🔗 Relación con el Proyecto
 
-Este Codigo de Ardino es parte del _Meditador de Bolsillo de Heartenic_, junto con:
+Este Codigo de Arduino es parte del _Meditador de Bolsillo de Heartenic_, junto con:
  - Diseño 3D de la carcaza: [https://github.com/Heartenic/Meditador-Arduino](https://github.com/Heartenic/Meditador-Modelos3D)
  - Documentación del Proyecto: [https://heartenic.com/meditador.html](https://heartenic.com/meditador.html)
 
-En Windows, el **Administrador de Dispositivos** puede ayudarte a ver si el puerto está presente o no.
-
 ---
+
 
